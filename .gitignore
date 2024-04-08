@@ -1,0 +1,48 @@
+# .NET
+*.obj
+*.bin
+*.user
+*.suo
+*.vscode/
+*.vs/
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio files
+*.vscode/
+*.sln
+*.suo
+*.ntvs*
+*.njsproj
+*.sln.docstates
+*.sln.ide
+
+# Rider
+.idea/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Visual Studio Code
+.vscode/
