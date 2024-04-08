@@ -46,3 +46,15 @@ artifacts/
 
 # Visual Studio Code
 .vscode/
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Docker image artifacts
+*.docker
+*.dockerignore
+docker-compose.override.yml
+
+# Environment-specific files
+.env
