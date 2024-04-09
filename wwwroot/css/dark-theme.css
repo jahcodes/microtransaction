@@ -1,0 +1,60 @@
+/* dark-theme.css */
+
+/* Body background and text color */
+body {
+    background-color: #202020;
+    color: #beee11;
+}
+
+/* Navbar background and text color */
+.navbar {
+    background-color: #333333;
+    color: #beee11;
+    border-color: #b1c41f;
+}
+
+.navbar-nav .nav-link {
+    color: #beee11;
+}
+
+.btn-primary:hover {
+    background-color: #b1c41f; /* Lighter background color on hover */
+    color: #202020; /* Text color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Add a box shadow */
+}
+
+/* dark-theme.css */
+.nav-link:hover {
+    background-color: #2b2b2b; /* Lighter background color on hover */
+    color: #b1c41f; /* Text color */
+}
+
+.navbar {
+    padding: 0; /* Remove default padding */
+}
+
+.navbar-brand {
+    color: #333333; /* Text color */
+    position: relative; /* Ensure z-index works properly */
+    z-index: 1; /* Ensure the navbar-brand stays above the background */
+    padding: 0 15px; /* Add padding to create space around the text */
+    font-weight: bold; /* Make the text bold for emphasis */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add a subtle shadow to create depth */
+}
+
+.navbar-brand:hover {
+    color: #202020; /* Text color on hover */
+}
+
+.navbar-brand::after {
+    content: ''; /* Create a pseudo-element to act as the background */
+    position: absolute; /* Position the pseudo-element */
+    top: 0; /* Align it vertically in the middle */
+    left: 0; /* Align it to the left edge of the navbar */
+    width: 100%; /* Make it cover the entire width of the navbar */
+    height: 100%; /* Make it cover the entire height of the navbar */
+    background-color: #333; /* Set the background color of the pseudo-element */
+    opacity: 0.5; /* Adjust the opacity to control the intensity of the embossing */
+    z-index: -1; /* Ensure the pseudo-element stays behind the navbar-brand */
+    border-radius: 0 0.25rem 0.25rem 0; /* Adjust border radius to match the navbar */
+}

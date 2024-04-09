@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - microtransaction</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/microtransaction.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/dark-theme.css" />
+
 </head>
-<body>
+<body class="dark-theme">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">microtransaction</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -20,13 +21,19 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">privacy</a>
                         </li>
                     </ul>
                 </div>
+            </div>
+            <!-- Login Button -->
+            <div class="nav-item">
+                <button id="loginButton" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    @(User?.Identity?.IsAuthenticated == true ? "sign out" : "login")
+                </button>
             </div>
         </nav>
     </header>
@@ -34,6 +41,26 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login through Steam</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Your login form or content here -->
+                    <img src="~/assets/sits_small.png" class="img-fluid" alt="Steam Logo">
+                    <!-- Example: -->
+                    <!-- <form action="/Account/Login" method="post">
+                         Your login form fields here
+                    </form> -->
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer class="border-top footer text-muted">
